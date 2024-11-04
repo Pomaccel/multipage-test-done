@@ -1,14 +1,21 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Main Menu",
+        menu_icon="cast",
+        icons=["house", "people", "robot"],  # Corrected here
+        options=["Home", "Member", "Chatbot"],
+    )
 
-st.set_page_config(
-    page_title="MADT FINAL Project",
-    page_icon= "🏠",)
+if selected == "Home":
+    st.title(f"You have selected {selected}")
 
-st.sidebar.success("Select a page above")
+    
+if selected == "Member":
+    st.title(f"You have selected {selected}")
 
-# Set the sidebar header name
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io)."
-)
+    
+if selected == "Chatbot":
+    st.title(f"You have selected {selected}")
